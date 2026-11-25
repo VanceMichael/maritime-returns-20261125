@@ -1,0 +1,32 @@
+[
+  {
+    "table": "activities",
+    "field": "entity",
+    "target": "entities",
+    "nullable": false
+  },
+  {
+    "table": "invoices",
+    "field": "entity",
+    "target": "entities",
+    "nullable": false
+  },
+  {
+    "table": "invoices",
+    "field": "supplier",
+    "target": "suppliers",
+    "nullable": false
+  },
+  {
+    "table": "allocationDrafts",
+    "field": "invoice",
+    "target": "invoices",
+    "nullable": false
+  },
+  {
+    "table": "allocationDrafts",
+    "field": "activity",
+    "target": "activities",
+    "nullable": false
+  }
+]

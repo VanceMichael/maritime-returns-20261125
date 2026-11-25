@@ -1,0 +1,148 @@
+{
+  "entities": [
+    {
+      "id": "LE-A",
+      "group": "GR-1",
+      "covered": true
+    },
+    {
+      "id": "LE-B",
+      "group": "GR-1",
+      "covered": false
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT-1",
+      "entity": "LE-A",
+      "year": "2026",
+      "kind": "commodity",
+      "profitMinor": 10000000
+    },
+    {
+      "id": "ACT-2",
+      "entity": "LE-A",
+      "year": "2026",
+      "kind": "shipping",
+      "profitMinor": 5000000
+    },
+    {
+      "id": "ACT-3",
+      "entity": "LE-B",
+      "year": "2026",
+      "kind": "shipping",
+      "profitMinor": 6000000
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "VEN-A",
+      "locationProof": "HK-registered"
+    },
+    {
+      "id": "VEN-B",
+      "locationProof": null
+    }
+  ],
+  "invoices": [
+    {
+      "id": "INV-1",
+      "entity": "LE-A",
+      "supplier": "VEN-A",
+      "year": "2026",
+      "amountMinor": 300000
+    },
+    {
+      "id": "INV-2",
+      "entity": "LE-B",
+      "supplier": "VEN-B",
+      "year": "2026",
+      "amountMinor": 100000
+    }
+  ],
+  "allocationDrafts": [
+    {
+      "id": "AL-1",
+      "invoice": "INV-1",
+      "activity": "ACT-1",
+      "amountMinor": 200000
+    },
+    {
+      "id": "AL-2",
+      "invoice": "INV-1",
+      "activity": "ACT-2",
+      "amountMinor": 100000
+    }
+  ],
+  "schemes": [
+    {
+      "id": "HALF",
+      "allowed": [
+        "commodity",
+        "shipping"
+      ],
+      "localRatio": "0.50",
+      "rate": "0.0825"
+    },
+    {
+      "id": "COVERED15",
+      "allowed": [
+        "commodity",
+        "shipping"
+      ],
+      "coveredOnly": true,
+      "localRatio": "0",
+      "rate": "0.15"
+    }
+  ],
+  "actors": [
+    {
+      "id": "book-a",
+      "role": "bookkeeper",
+      "entity": "LE-A"
+    },
+    {
+      "id": "accountant",
+      "role": "accountant"
+    },
+    {
+      "id": "tax-a",
+      "role": "tax"
+    },
+    {
+      "id": "tax-b",
+      "role": "tax"
+    }
+  ],
+  "sourceChanges": [
+    {
+      "id": "CREDIT-1",
+      "invoice": "INV-1",
+      "year": "2026",
+      "amountMinor": 80000,
+      "reason": "服务费部分退回"
+    },
+    {
+      "id": "SUPPLIER-PROOF",
+      "supplier": "VEN-B",
+      "locationProof": "HK-registered"
+    },
+    {
+      "id": "CHOICE-A",
+      "entity": "LE-A",
+      "year": "2026",
+      "scheme": "COVERED15"
+    },
+    {
+      "id": "CHOICE-B",
+      "entity": "LE-B",
+      "year": "2026",
+      "scheme": "HALF"
+    },
+    {
+      "id": "ALLOCATION-CHANGE",
+      "allocation": "AL-1",
+      "amountMinor": 160000
+    }
+  ]
+}

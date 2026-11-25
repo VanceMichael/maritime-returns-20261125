@@ -1,0 +1,14 @@
+{
+  "name": "合成申报受理台",
+  "path": "/returns/submissions",
+  "lookup": "/returns/submissions/",
+  "id": "submissionLine",
+  "group": "returns",
+  "key": "Filing-Reference",
+  "modes": [
+    "accepted",
+    "rejected",
+    "accepted_disconnect",
+    "pending"
+  ]
+}
