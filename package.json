@@ -8,7 +8,10 @@
   },
   "scripts": {
     "start:partner": "node support/peer.mjs",
-    "build": "node --check support/peer.mjs && node --check tests/partner.test.mjs",
+    "start:app": "node support/server.mjs",
+    "start:all": "node support/start-all.mjs",
+    "smoke": "bash support/smoke.sh",
+    "build": "node --check support/peer.mjs && node --check support/store.mjs && node --check support/domain.mjs && node --check support/peer-client.mjs && node --check support/app.mjs && node --check support/server.mjs && node --check support/start-all.mjs && node --check tests/partner.test.mjs && node --check tests/domain.test.mjs && node --check tests/app.test.mjs",
     "test": "node --test tests/*.test.mjs"
   }
 }
